@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<UpdateInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AppName>BanSyatem</AppName>
+  <AppVersion>1.0.0.0</AppVersion>
+  <FileExecuteBefore>BanSyatem.exe</FileExecuteBefore>
+  <FileExecuteAfter>BanSyatem.exe</FileExecuteAfter>
+  <ExecuteArgumentAfter />
+  <ExecuteTimeout>0</ExecuteTimeout>
+  <TreatErrorAsNotUpdated>false</TreatErrorAsNotUpdated>
+  <PromptUserBeforeAutomaticUpgrade>true</PromptUserBeforeAutomaticUpgrade>
+  <AutoCloseSucceedWindow>true</AutoCloseSucceedWindow>
+  <DeleteMethod>None</DeleteMethod>
+  <RequiredMinVersion>0.0.0.1</RequiredMinVersion>
+  <PackageSize>0</PackageSize>
+  <PackagePassword>lisixu</PackagePassword>
+  <ForceUpdate>true</ForceUpdate>
+  <Packages>
+    <PackageInfo>
+      <FilePath />
+      <FileSize>0</FileSize>
+      <Version>0.0.0.0</Version>
+      <PackageHash>895FFA13D7DE4A9610CB281152D23FE1</PackageHash>
+      <PackageName>58fc55acb9314490b16bf152c6b78f03.zip</PackageName>
+      <PackageSize>1313843</PackageSize>
+      <Method>Always</Method>
+      <VerificationLevel>None</VerificationLevel>
+      <FileHash />
+      <Files>
+        <string>BanSyatem.exe</string>
+      </Files>
+    </PackageInfo>
+  </Packages>
+  <HideBeforeExecuteWindow>false</HideBeforeExecuteWindow>
+  <HideAfterExecuteWindow>false</HideAfterExecuteWindow>
+  <MustUpdate>true</MustUpdate>
+  <AutoExitCurrentProcess>true</AutoExitCurrentProcess>
+  <AutoEndProcessesWithinAppDir>false</AutoEndProcessesWithinAppDir>
+  <AutoKillProcesses>true</AutoKillProcesses>
+  <RequreAdminstrorPrivilege>true</RequreAdminstrorPrivilege>
+</UpdateInfo>
