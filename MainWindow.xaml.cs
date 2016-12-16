@@ -1,11 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using RAA;
+﻿using RAA;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Data.SQLite;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
