@@ -1,0 +1,74 @@
+﻿<Window x:Class="BanSyatem.Version"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BanSyatem"
+        mc:Ignorable="d"
+        Title="RAA-Version" Loaded="Window_Loaded" Height="454" Width="435" Background="{x:Null}" Foreground="{x:Null}" WindowStyle="None" WindowStartupLocation="CenterScreen" Icon="ico/RAA_Mk1_ico-large.ico" ResizeMode="NoResize" SnapsToDevicePixels="True" Topmost="True">
+    <Window.Resources>
+        <Style x:Key="Buuton_Style" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid  x:Name="BT" Width="34" Height="20" Margin="0">
+                            <Border x:Name="CT" BorderBrush="{x:Null}" BorderThickness="1,1,1.1,1" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="33" CornerRadius="5">
+                                <TextBlock x:Name="TEXT" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CT" Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.1">
+                                            <GradientStop Color="#FF14F7CE" Offset="0"/>
+                                            <GradientStop Color="#FF06FDD0" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="TEXT" Property="Foreground">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FFF0C819" Offset="0.02"/>
+                                            <GradientStop Color="#FFF0C3C3" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Effect>
+        <DropShadowEffect Color="#FFFF0404" ShadowDepth="0" Direction="301"/>
+    </Window.Effect>
+    <Grid x:Name="Grid" Margin="-2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="438" Height="458" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="115*"/>
+        </Grid.RowDefinitions>
+
+        <Border Margin="0" BorderThickness="0" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.509,0.161" StartPoint="0.515,0.87" SpreadMethod="Reflect" Opacity="0.7">
+                    <GradientStop Color="#FF213799" Offset="0.022"/>
+                    <GradientStop Color="#FF102068" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" Color="#FF414141" Direction="301"/>
+            </Border.Effect>
+        </Border>
+        <Label x:Name="label1" Content="更新日志" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="179,153,0,0" Grid.Row="1" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="Segoe UI Black"/>
+        <Image x:Name="image" MouseLeftButtonDown="textBox_Raa_MouseDoubleClick" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="71" Margin="49,4,0,0" Grid.Row="1" Source="ico/23023285.png"/>
+        <TextBox x:Name="textBox_Sea" IsReadOnly="True" HorizontalAlignment="Left" Height="35" TextWrapping="Wrap" VerticalAlignment="Top" Width="278" Margin="133,15,0,0" Grid.Row="1" Foreground="White" SelectionBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnlyCaretVisible="True" IsEnabled="False"/>
+        <Button x:Name="Button_min" Content="一" Margin="357,8,0,6" FontSize="13.333" FontWeight="Bold" FontFamily="Microsoft Tai Le" ToolTip="最小化" Background="#00000000" BorderBrush="{x:Null}" Foreground="White" HorizontalAlignment="Left" Width="34" SnapsToDevicePixels="True" ClipToBounds="True" BorderThickness="0" FocusVisualStyle="{DynamicResource Buuton_Style}" Style="{DynamicResource Buuton_Style}" Click="button_Min_Click"  />
+        <Button x:Name="Button_close" Content="X" Margin="395,8,0,6" FontSize="13.333" FontWeight="Bold" FontFamily="Arial Black" ToolTip="关闭"  HorizontalAlignment="Left" Width="34" ClipToBounds="True" SnapsToDevicePixels="True" Padding="0"   BorderThickness="0"  BorderBrush="{x:Null}" Background="Transparent" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FocusVisualStyle="{DynamicResource Buuton_Style}" Style="{DynamicResource Buuton_Style}" Click="button_Close_Click" />
+        <TextBox x:Name="textBox_updata_log" IsReadOnly="True" HorizontalAlignment="Left" Height="213" TextWrapping="Wrap" VerticalAlignment="Top" Width="390" Margin="20,188,0,0" Grid.Row="1" Foreground="White" SelectionBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="textBox_Raa"  IsReadOnly="True" HorizontalAlignment="Left" Height="64" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" Margin="69,82,0,0" Grid.Row="1" Foreground="White" SelectionBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" IsReadOnlyCaretVisible="True" IsEnabled="False" />
+    </Grid>
+</Window>

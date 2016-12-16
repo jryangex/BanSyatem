@@ -1,0 +1,108 @@
+﻿<Window x:Class="BanSyatem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BanSyatem"
+        mc:Ignorable="d"
+        Title="RAA" Height="761" Width="398" Loaded="Window_Loaded"  Foreground="{x:Null}" WindowStartupLocation="CenterScreen" Icon="ico/RAA_Mk1_ico-large.ico" ResizeMode="NoResize" SnapsToDevicePixels="True" ForceCursor="True" UseLayoutRounding="False" BorderThickness="0" Visibility="Visible" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Opacity="1" WindowStyle="None">
+    <Window.Resources>
+        <Style x:Key="Buuton_Style" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid  x:Name="BT" Width="34" Height="20" Margin="0">
+                            <Border x:Name="CT" BorderBrush="{x:Null}" BorderThickness="1,1,1.1,1" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="33" CornerRadius="5">
+                                <TextBlock x:Name="TEXT" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" LineHeight="10" TextAlignment="Center"/>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CT" Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.1">
+                                            <GradientStop Color="#FF14F7CE" Offset="0"/>
+                                            <GradientStop Color="#FF06FDD0" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="TEXT" Property="Foreground">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FFF0C819" Offset="0.02"/>
+                                            <GradientStop Color="#FFF0C3C3" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Effect>
+        <DropShadowEffect FrameworkElement.FlowDirection="RightToLeft" Color="Red" Direction="301" RenderingBias="Quality" ShadowDepth="0"/>
+    </Window.Effect>
+    <Grid x:Name="Grid" Margin="-14,0,-11,0" Focusable="True" d:IsLocked="True" >
+
+        <Border x:Name="Border_Back" Margin="13,0,11,0" BorderThickness="0" Grid.RowSpan="2" d:IsLocked="True">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.509,0.161" StartPoint="0.515,0.87" SpreadMethod="Reflect" Opacity="0.7">
+                    <GradientStop Color="#FF213799" Offset="0.022"/>
+                    <GradientStop Color="#FF102068" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" Color="#FF414141" BlurRadius="8"/>
+            </Border.Effect>
+        </Border>
+        <Label x:Name="label" Content="Copyright© 2014-2016 JackLee@SEA Group. All Rights Reserved." Margin="19,0,19,4" Foreground="White" HorizontalAlignment="Center" Width="385" VerticalAlignment="Bottom" d:IsLocked="True"/>
+        <Label x:Name="label5" Content="Version:" MouseLeftButtonDown="label5_MouseDoubleClick" HorizontalAlignment="Left" Margin="19,6,0,0" Foreground="White" BorderThickness="1" Background="{x:Null}" Width="58" VerticalAlignment="Top" d:IsLocked="True"/>
+        <ComboBox x:Name="comboBox_stly" SelectionChanged="comboBox_stly_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="19,33,0,0" IsReadOnly="True" SelectedIndex="0" d:IsLocked="True"/>
+        <Label x:Name="label_BanSystem" Content=" " MouseDoubleClick="label_BanSystem_MouseDoubleClick" Margin="0,5,0,0" Foreground="White" FontSize="24" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" d:IsLocked="True"/>
+        <Button x:Name="Button_min" Content="一" Margin="329,4,60,0" FontSize="13.333" FontWeight="Bold" FontFamily="Microsoft Tai Le" ToolTip="最小化" Background="#00000000" BorderBrush="{x:Null}" Foreground="White" HorizontalAlignment="Right" Width="34" SnapsToDevicePixels="True" ClipToBounds="True" BorderThickness="0" FocusVisualStyle="{DynamicResource Buuton_Style}" Style="{DynamicResource Buuton_Style}" Click="button_Min_Click" VerticalAlignment="Top" d:IsLocked="True"  />
+        <Button x:Name="Button_close" Content="X" Margin="369,4,20,0" FontSize="13.333" FontWeight="Bold" FontFamily="Arial Black" ToolTip="关闭" ClipToBounds="True" SnapsToDevicePixels="True" Padding="0"   BorderThickness="0"  BorderBrush="{x:Null}" Background="Transparent" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FocusVisualStyle="{DynamicResource Buuton_Style}" Style="{DynamicResource Buuton_Style}" Click="button_Close_Click" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" d:IsLocked="True" />
+        <Label x:Name="Label_Team_One" Content="" Margin="185,124,0,0" Foreground="White" FontSize="20" FontFamily="Segoe UI Black" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" d:IsLocked="True"/>
+        <Label x:Name="Label_Team_Two" Content="" Margin="0,429,178,0" Foreground="White" FontSize="20" FontFamily="Segoe UI Black" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" d:IsLocked="True"/>
+        <Label x:Name="Label_Game_Server" Content="" Margin="0,76,169,0" Foreground="White" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" d:IsLocked="True"/>
+        <CheckBox x:Name="checkBox" Content="自动解析" RenderTransformOrigin="1.043,6.237" Margin="95,104,260,0" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Microsoft YaHei" Checked="checkBox_Checked" HorizontalAlignment="Center" VerticalAlignment="Top" d:IsLocked="True"/>
+        <ComboBox x:Name="comboBox_state_Server_list" Margin="0,76,0,0" SelectionChanged="comboBox_state_Server_list_SelectionChanged" HorizontalAlignment="Center" Width="80" Height="21" VerticalAlignment="Top" d:IsLocked="True"/>
+        <Label x:Name="Lable_data" Content="" Margin="255,133,26,600" Foreground="White" FontSize="14" d:IsLocked="True"/>
+        <Button x:Name="Button_Parsed_Data" Content="" Margin="172,102,85,0" Click="button_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Width="166" d:IsLocked="True"/>
+        <ComboBox x:Name="comboBox_lng_list" SelectionChanged="comboBox_lng" Margin="256,76,87,0" SelectedIndex="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" d:IsLocked="True"/>
+        <DataGrid x:Name="DataGrid_Team_One"  LoadingRow="dataGrid_LoadingRow" ItemsSource="{Binding}" Margin="43,164,0,0" Background="{x:Null}" BorderBrush="{x:Null}" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserResizeRows="False" IsSynchronizedWithCurrentItem="True" Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Width="337" d:IsLocked="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding D_Name}" ClipboardContentBinding="{x:Null}" Header="角色名字" CanUserReorder="False" IsReadOnly="True" CanUserSort="False" Width="80" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_Ship_cn_Name}" CanUserSort="False" ClipboardContentBinding="{x:Null}" Header="战舰名" IsReadOnly="True" Width="90" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_Win}" ClipboardContentBinding="{x:Null}" Header="胜率" CanUserReorder="False" CanUserResize="False" Width="50" IsReadOnly="True" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_TR}" ClipboardContentBinding="{x:Null}" Header="总场次" CanUserReorder="False" CanUserResize="False" Width="60" IsReadOnly="True" CanUserSort="False" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_power}" ClipboardContentBinding="{x:Null}" Header="效率" CanUserReorder="False" CanUserResize="False" Width="55" IsReadOnly="True" CanUserSort="False" d:IsLocked="True"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="增加到黑名单" Click="MenuItem_Click"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
+        <DataGrid x:Name="DataGrid_Team_Two"  LoadingRow="dataGrid_LoadingRow"  ItemsSource="{Binding}" Margin="0,470,43,0" Background="{x:Null}" BorderBrush="{x:Null}" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserResizeRows="False" IsSynchronizedWithCurrentItem="True" VerticalAlignment="Top" HorizontalAlignment="Right" Width="337" d:IsLocked="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding D_Name}" ClipboardContentBinding="{x:Null}" Header="角色名字" CanUserReorder="False" CanUserResize="True" Width="80" IsReadOnly="True" CanUserSort="False" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_Ship_cn_Name}" CanUserSort="False" ClipboardContentBinding="{x:Null}" Header="战舰名" IsReadOnly="True" Width="90" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_Win}" ClipboardContentBinding="{x:Null}" Header="胜率" CanUserReorder="False" CanUserResize="False" Width="50" IsReadOnly="True" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_TR}" ClipboardContentBinding="{x:Null}" Header="总场次" CanUserReorder="False" CanUserResize="False" Width="55" IsReadOnly="True" CanUserSort="False" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_power}" ClipboardContentBinding="{x:Null}" Header="效率" CanUserReorder="False" CanUserResize="False" Width="60" IsReadOnly="True" CanUserSort="False" d:IsLocked="True"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="增加到黑名单" Click="MenuItem_Click_two"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+        </DataGrid>
+        <Label x:Name="label_VS" Content="VS" HorizontalAlignment="Right" Margin="0,263,0,397" Foreground="White" FontSize="72" Visibility="Hidden" d:IsLocked="True"/>
+
+    </Grid>
+</Window>

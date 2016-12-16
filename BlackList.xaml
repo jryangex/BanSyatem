@@ -1,0 +1,97 @@
+﻿<Window x:Class="BanSyatem.BlackList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BanSyatem"
+        mc:Ignorable="d"
+        Title="RAA-BlackList" Height="556" Width="548" Background="{x:Null}" WindowStartupLocation="CenterScreen" Icon="ico/RAA_Mk1_ico-large.ico" ResizeMode="NoResize" Foreground="{x:Null}" WindowStyle="None">
+    <Window.Resources>
+        <Style x:Key="Buuton_Style" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid  x:Name="BT" Width="34" Height="20" Margin="0">
+                            <Border x:Name="CT" BorderBrush="{x:Null}" BorderThickness="1,1,1.1,1" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="33" CornerRadius="5">
+                                <TextBlock x:Name="TEXT" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="CT" Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.1">
+                                            <GradientStop Color="#FF14F7CE" Offset="0"/>
+                                            <GradientStop Color="#FF06FDD0" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="TEXT" Property="Foreground">
+                                    <Setter.Value>
+                                        <RadialGradientBrush>
+                                            <GradientStop Color="#FFF0C819" Offset="0.02"/>
+                                            <GradientStop Color="#FFF0C3C3" Offset="1"/>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Effect>
+        <DropShadowEffect Color="Red" Direction="301" ShadowDepth="0"/>
+    </Window.Effect>
+    <Grid x:Name="Grid" Margin="-1,-1,-2,-2" Height="558" VerticalAlignment="Top" HorizontalAlignment="Left" Width="550" d:IsLocked="True" >
+
+        <Border Margin="0" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="548" Height="556" d:IsLocked="True">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.509,0.161" StartPoint="0.515,0.87" SpreadMethod="Reflect" Opacity="0.7">
+                    <GradientStop Color="#FF213799" Offset="0.022"/>
+                    <GradientStop Color="#FF102068" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" Color="#FF414141" BlurRadius="8"/>
+            </Border.Effect>
+        </Border>
+
+        <Label x:Name="label_Heard_Text" Content="玩家黑名单" Margin="207,16,209,483" Foreground="White" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Width="132" Height="37" d:IsLocked="True"/>
+        <Button x:Name="Button_close" Content="X" Margin="508,8,0,528" FontSize="13.333" FontWeight="Bold" FontFamily="Arial Black" ToolTip="关闭"  HorizontalAlignment="Left" Width="34" ClipToBounds="True" SnapsToDevicePixels="True" Padding="0"   BorderThickness="0"  BorderBrush="{x:Null}" Background="Transparent" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" FocusVisualStyle="{DynamicResource Buuton_Style}" Style="{DynamicResource Buuton_Style}" Click="button_Close_Click" d:IsLocked="True" />
+        <TabControl x:Name="tabControl_Heard" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="500" Margin="25,376,0,0" Background="{x:Null}" BorderBrush="White" Foreground="{x:Null}" d:IsLocked="True">
+            <TabItem x:Name="TabItem_Text" Header="手动增加" d:IsLocked="True">
+                <Grid Margin="0,0,0,-2" d:IsLocked="True">
+                    <Button x:Name="Button_Get_time" Content="获取时间" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="192,12,0,0" Click="button_Click" d:IsLocked="True"/>
+                    <Label x:Name="Label_Time" Content="时间:" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="4,10,0,0" d:IsLocked="True"/>
+                    <Label x:Name="Lable_Name" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="275,10,0,0" Foreground="White" d:IsLocked="True"/>
+                    <Label x:Name="Label_Other" Content="理由:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,40,0,0" Foreground="White" d:IsLocked="True"/>
+                    <TextBox x:Name="TextBox_Remarks" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="441" Margin="43,42,0,0" BorderBrush="White" Background="{x:Null}" Foreground="White" VerticalContentAlignment="Center" d:IsLocked="True"/>
+                    <TextBox x:Name="TextBox_Time" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="144" Margin="43,10,0,0" BorderBrush="White" Background="{x:Null}" Foreground="White" VerticalContentAlignment="Center" d:IsLocked="True"/>
+                    <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="178" Margin="306,10,0,0" BorderBrush="White" Background="{x:Null}" Foreground="White" VerticalContentAlignment="Center" d:IsLocked="True"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="Button_Add" Content="增加" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="165,492,0,0" Click="button1_Click" d:IsLocked="True"/>
+        <Button x:Name="Button_Del" Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="314,492,0,0" Click="button1_Copy_Click" d:IsLocked="True"/>
+        <DataGrid x:Name="DataGrid_Ban_List" ItemsSource="{Binding}" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="308" Width="500" Margin="25,63,0,0" Background="{x:Null}" MinColumnWidth="0" CanUserReorderColumns="False" RowHeaderWidth="0" BorderBrush="{x:Null}" CanUserAddRows="False" d:IsLocked="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding DTime}" ClipboardContentBinding="{x:Null}" Header="时间" Width="130" CanUserResize="False"  CanUserReorder="False" IsReadOnly="True" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding D_UID}" ClipboardContentBinding="{x:Null}" Header="玩家UID" Width="100" CanUserResize="False" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding DName}" ClipboardContentBinding="{x:Null}" Header="游戏角色名" Width="140" CanUserResize="True" CanUserReorder="False" IsReadOnly="True" CanUserSort="False" d:IsLocked="True"/>
+                <DataGridTextColumn Binding="{Binding DBZ}" ClipboardContentBinding="{x:Null}" Header="备注" CanUserResize="True" CanUserReorder="False" IsReadOnly="True" Width="110" CanUserSort="False" d:IsLocked="True"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="移除黑名单" Click="MenuItem_Click" ></MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+        </DataGrid>
+        <Button x:Name="button2" Content="全服通缉名单" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="25,8,0,0" d:IsLocked="True"/>
+
+    </Grid>
+</Window>
